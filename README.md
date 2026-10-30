@@ -1,7 +1,7 @@
 # CineBook: refactoring project (Software Engineering)
 
 **Course:** Software Engineering, UM6P College of Computing
-**Team:** _Name 1_ and _Name 2_
+**Team:** Abdellaoui Amine and El Gouina Housam
 
 CineBook is a console-based **cinema ticket booking system** (movies, showtimes, customers,
 tickets, pricing, payments, notifications, reports). It works, but its design has decayed.
