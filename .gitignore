@@ -1,0 +1,10 @@
+# Java / build
+*.class
+target/
+out/
+# IDE
+.idea/
+*.iml
+.vscode/
+# Generated at runtime
+cinema_report.txt

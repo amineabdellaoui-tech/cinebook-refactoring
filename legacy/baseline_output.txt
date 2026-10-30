@@ -1,0 +1,95 @@
+Loading config...
+Seeding data...
+Ready.
+=== Day 1: booking ===
+> BOOK C1 SH1 A1 CARD - PD3
+OK: Amine booked Interstellar seat A1 (IMAX, day 3 20h) for 21.90 EUR with popcorn drink 3D-glasses -> T1
+   [EMAIL to amine@um6p.ma] Ticket T1 confirmed
+   [SMS to 0600000001] Ticket T1 ok
+> BOOK C2 SH2 B3 CASH PROMO10 -
+OK: Salma booked The Lion King seat B3 (STANDARD, day 2 15h) for 6.48 EUR -> T2
+   [EMAIL to salma@um6p.ma] Ticket T2 confirmed
+   [SMS to 0600000002] Ticket T2 ok
+> BOOK C3 SH4 C2 CASH - -
+ERROR: Youssef is too young for Night Terror (18+)
+> BOOK C3 SH3 A1 CASH - -
+ERROR: Youssef is too young for Oppenheimer (16+)
+> BOOK C2 SH3 A1 CASH FREE5 P
+OK: Salma booked Oppenheimer seat A1 (VIP, day 6 19h) for 20.65 EUR with popcorn -> T3
+   [EMAIL to salma@um6p.ma] Ticket T3 confirmed
+   [SMS to 0600000002] Ticket T3 ok
+> BOOK C1 SH3 A1 CARD - -
+ERROR: seat A1 is already taken
+> BOOK C1 SH3 Z9 CARD - -
+ERROR: invalid seat Z9
+> BOOK C4 SH2 A1 WALLET - -
+ERROR: insufficient wallet balance for 5.60 EUR
+> BOOK C5 SH2 A2 CARD - -
+ERROR: card declined (code 5)
+> BOOK C1 SH2 A3 CARD BADCODE -
+WARNING: invalid promo code BADCODE
+OK: Amine booked The Lion King seat A3 (STANDARD, day 2 15h) for 6.40 EUR -> T4
+   [EMAIL to amine@um6p.ma] Ticket T4 confirmed
+   [SMS to 0600000001] Ticket T4 ok
+=== Cancellations ===
+> CANCEL T2
+OK: T2 cancelled, refund 3.24 EUR
+   [EMAIL to salma@um6p.ma] Ticket T2 cancelled, refund 3.24 EUR
+> CANCEL T1
+ERROR: IMAX tickets are non-refundable
+=== Day 6: screening ===
+> USE T3
+OK: T3 used, Salma now has 20 points
+> USE T3
+ERROR: ticket already used
+> CANCEL T3
+ERROR: a used ticket cannot be cancelled
+=== Search ===
+> SEARCH genre Sci
+Search genre=Sci:
+   SH1 Interstellar (IMAX)
+> SEARCH hall VIP
+Search hall=VIP:
+   SH3 Oppenheimer (VIP)
+> SEARCH day 4
+Search day=4:
+   SH4 Night Terror (STANDARD)
+=== Kiosk ===
+OK: Salma booked Night Terror seat D4 (STANDARD, day 4 22h) for 8.55 EUR -> T5
+   [EMAIL to salma@um6p.ma] Ticket T5 confirmed
+   [SMS to 0600000002] Ticket T5 ok
+   ---- TICKET T5 ----
+   show SH4 seat D4 price 8.55 EUR
+   status BOOKED
+KIOSK ERROR: Kiosk cannot refund tickets
+=== Reports ===
+CINEMA REPORT (day 6)
+SH1 | IMAX | day 3 | 1/40 seats
+SH2 | STANDARD | day 2 | 1/40 seats
+SH3 | VIP | day 6 | 1/40 seats
+SH4 | STANDARD | day 4 | 1/40 seats
+T1 C1 SH1 A1 21.90 EUR BOOKED
+T2 C2 SH2 B3 6.48 EUR CANCELLED
+T3 C2 SH3 A1 20.65 EUR USED
+T4 C1 SH2 A3 6.40 EUR BOOKED
+T5 C2 SH4 D4 8.55 EUR BOOKED
+Amine (STUDENT) points=0 wallet=0.00 EUR
+Salma (MEMBER) points=20 wallet=0.00 EUR
+Youssef (REGULAR) points=0 wallet=0.00 EUR
+Hajar (SENIOR) points=0 wallet=5.00 EUR
+Omar (REGULAR) points=0 wallet=0.00 EUR
+ticket;customer;show;seat;price;status
+T1;C1;SH1;A1;21.90;BOOKED
+T2;C2;SH2;B3;6.48;CANCELLED
+T3;C2;SH3;A1;20.65;USED
+T4;C1;SH2;A3;6.40;BOOKED
+T5;C2;SH4;D4;8.55;BOOKED
+[
+  {"id":"T1","seat":"A1","price":21.90,"status":"BOOKED"},
+  {"id":"T2","seat":"B3","price":6.48,"status":"CANCELLED"},
+  {"id":"T3","seat":"A1","price":20.65,"status":"USED"},
+  {"id":"T4","seat":"A3","price":6.40,"status":"BOOKED"},
+  {"id":"T5","seat":"D4","price":8.55,"status":"BOOKED"}
+]
+Report written to cinema_report.txt
+Total revenue: 60.74 EUR
